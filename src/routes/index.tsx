@@ -59,15 +59,12 @@ const depoimentos: Record<string, { produto: string; avatar: string }> = {
 };
 
 const slides = [
-  { src: assetUrl(previewBioquimicaAsset.url), alt: "Mapa mental de Bioquímica da Nutrição" },
-  { src: assetUrl(previewAvaliacaoAsset.url), alt: "Mapa mental de Avaliação Nutricional" },
-  { src: assetUrl(previewFisiologiaAsset.url), alt: "Mapa mental de Fisiologia Humana" },
-  { src: assetUrl(previewClinicaAsset.url), alt: "Mapa mental de Nutrição Clínica" },
-  { src: assetUrl(previewEsportivaAsset.url), alt: "Mapa mental de Nutrição Esportiva" },
-  {
-    src: assetUrl(previewMaternoInfantilAsset.url),
-    alt: "Mapa mental de Nutrição Materno-Infantil",
-  },
+  { src: assetUrl(previewVetAnatomiaAsset.url), alt: "Mapa mental de Anatomia Veterinária" },
+  { src: assetUrl(previewVetFisiologiaAsset.url), alt: "Mapa mental de Fisiologia Animal" },
+  { src: assetUrl(previewVetFarmacologiaAsset.url), alt: "Mapa mental de Farmacologia Veterinária" },
+  { src: assetUrl(previewVetPatologiaAsset.url), alt: "Mapa mental de Patologia Veterinária" },
+  { src: assetUrl(previewVetMicrobiologiaAsset.url), alt: "Mapa mental de Microbiologia Veterinária" },
+  { src: assetUrl(previewVetNutricaoAsset.url), alt: "Mapa mental de Nutrição Animal" },
 ];
 
 
