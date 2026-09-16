@@ -10,10 +10,10 @@ import mapaDidatica from "@/assets/optimized/mapa-didatica-praticas.webp";
 import mapaLdb from "@/assets/optimized/mapa-ldb-legislacao.webp";
 import mapaBncc from "@/assets/optimized/mapa-bncc.webp";
 import mapaDesenvolvimento from "@/assets/optimized/mapa-desenvolvimento-infantil.webp";
-import depoimentoReview1 from "@/assets/depoimento-review-1.webp.asset.json";
-import depoimentoReview2 from "@/assets/depoimento-review-2.webp.asset.json";
-import depoimentoReview3 from "@/assets/depoimento-review-3.webp.asset.json";
-import depoimentoReview4 from "@/assets/depoimento-review-4.webp.asset.json";
+import depoimentoVetEstudos1 from "@/assets/depoimento-vet-estudos-1.png.asset.json";
+import depoimentoVetEstudos2 from "@/assets/depoimento-vet-estudos-2.png.asset.json";
+import depoimentoVetEstudos3 from "@/assets/depoimento-vet-estudos-3.png.asset.json";
+import depoimentoVetEstudos4 from "@/assets/depoimento-vet-estudos-4.png.asset.json";
 
 import bonus1Asset from "@/assets/bonus-1.webp.asset.json";
 import bonus2Asset from "@/assets/bonus-2.webp.asset.json";
@@ -55,10 +55,10 @@ const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
 // Cada depoimento tem sua própria foto de produto e seu próprio avatar,
 // pareados para que a foto combine com o que a pessoa fala.
 const depoimentos: Record<string, { produto: string; avatar: string }> = {
-  mariana: { produto: assetSrc(depoimentoReview1), avatar: avatar1 },
-  camila: { produto: assetSrc(depoimentoReview2), avatar: avatar2 },
-  beatriz: { produto: assetSrc(depoimentoReview3), avatar: avatar3 },
-  patricia: { produto: assetSrc(depoimentoReview4), avatar: avatar4 },
+  mariana: { produto: assetSrc(depoimentoVetEstudos2), avatar: avatar1 },
+  camila: { produto: assetSrc(depoimentoVetEstudos1), avatar: avatar2 },
+  beatriz: { produto: assetSrc(depoimentoVetEstudos4), avatar: avatar3 },
+  patricia: { produto: assetSrc(depoimentoVetEstudos3), avatar: avatar4 },
 };
 
 const slides = [
@@ -80,7 +80,7 @@ function rewriteAssets(html: string) {
     .replace(/\/assets\/bonus_(\d)\.webp/g, (_m, n) => bonusImgs[(Number(n) - 1) % bonusImgs.length] ?? bonusImgs[0] ?? "")
     .replace(
       /\/assets\/depoimento_(\w+)_produto\.webp/g,
-      (_m, name: string) => depoimentos[name]?.produto ?? assetSrc(depoimentoReview1),
+      (_m, name: string) => depoimentos[name]?.produto ?? assetSrc(depoimentoVetEstudos1),
     )
     .replace(
       /\/assets\/depoimento_(\w+)_avatar\.webp/g,
