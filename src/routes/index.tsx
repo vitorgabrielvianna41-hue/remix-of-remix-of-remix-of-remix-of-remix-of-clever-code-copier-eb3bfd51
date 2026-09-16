@@ -34,8 +34,11 @@ import previewVetMicrobiologiaAsset from "@/assets/preview-vet-microbiologia.png
 import previewVetNutricaoAsset from "@/assets/preview-vet-nutricao.webp.asset.json";
 
 const ASSET_ORIGIN = "https://id-preview--531366b2-beb6-4ef6-9eba-2f23e6d9493d.lovable.app";
+const OWN_PROJECT_ID = "b1371966-8896-4ea0-9dc6-45641ea24dd3";
 const assetUrl = (path: string) => `${ASSET_ORIGIN}${path}`;
-const kitMockup = assetUrl(kitMockupAsset.url);
+const assetSrc = (asset: { url: string; project_id: string }) =>
+  asset.project_id === OWN_PROJECT_ID ? asset.url : assetUrl(asset.url);
+const kitMockup = assetSrc(kitMockupAsset);
 
 const mapas = [
   mapaFundamentos,
@@ -45,26 +48,26 @@ const mapas = [
   mapaBncc,
 ];
 const bonusImgs = [bonus1Asset, bonus2Asset, bonus3Asset, bonus4Asset, bonus5Asset, bonus6Asset].map(
-  (asset) => assetUrl(asset.url),
+  (asset) => assetSrc(asset),
 );
 const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
 
 // Cada depoimento tem sua própria foto de produto e seu próprio avatar,
 // pareados para que a foto combine com o que a pessoa fala.
 const depoimentos: Record<string, { produto: string; avatar: string }> = {
-  mariana: { produto: assetUrl(depoimentoReview1.url), avatar: avatar1 },
-  camila: { produto: assetUrl(depoimentoReview2.url), avatar: avatar2 },
-  beatriz: { produto: assetUrl(depoimentoReview3.url), avatar: avatar3 },
-  patricia: { produto: assetUrl(depoimentoReview4.url), avatar: avatar4 },
+  mariana: { produto: assetSrc(depoimentoReview1), avatar: avatar1 },
+  camila: { produto: assetSrc(depoimentoReview2), avatar: avatar2 },
+  beatriz: { produto: assetSrc(depoimentoReview3), avatar: avatar3 },
+  patricia: { produto: assetSrc(depoimentoReview4), avatar: avatar4 },
 };
 
 const slides = [
-  { src: assetUrl(previewVetAnatomiaAsset.url), alt: "Mapa mental de Anatomia Veterinária" },
-  { src: assetUrl(previewVetFisiologiaAsset.url), alt: "Mapa mental de Fisiologia Animal" },
-  { src: assetUrl(previewVetFarmacologiaAsset.url), alt: "Mapa mental de Farmacologia Veterinária" },
-  { src: assetUrl(previewVetPatologiaAsset.url), alt: "Mapa mental de Patologia Veterinária" },
-  { src: assetUrl(previewVetMicrobiologiaAsset.url), alt: "Mapa mental de Microbiologia Veterinária" },
-  { src: assetUrl(previewVetNutricaoAsset.url), alt: "Mapa mental de Nutrição Animal" },
+  { src: assetSrc(previewVetAnatomiaAsset), alt: "Mapa mental de Anatomia Veterinária" },
+  { src: assetSrc(previewVetFisiologiaAsset), alt: "Mapa mental de Fisiologia Animal" },
+  { src: assetSrc(previewVetFarmacologiaAsset), alt: "Mapa mental de Farmacologia Veterinária" },
+  { src: assetSrc(previewVetPatologiaAsset), alt: "Mapa mental de Patologia Veterinária" },
+  { src: assetSrc(previewVetMicrobiologiaAsset), alt: "Mapa mental de Microbiologia Veterinária" },
+  { src: assetSrc(previewVetNutricaoAsset), alt: "Mapa mental de Nutrição Animal" },
 ];
 
 
@@ -77,7 +80,7 @@ function rewriteAssets(html: string) {
     .replace(/\/assets\/bonus_(\d)\.webp/g, (_m, n) => bonusImgs[(Number(n) - 1) % bonusImgs.length] ?? bonusImgs[0] ?? "")
     .replace(
       /\/assets\/depoimento_(\w+)_produto\.webp/g,
-      (_m, name: string) => depoimentos[name]?.produto ?? assetUrl(depoimentoReview1.url),
+      (_m, name: string) => depoimentos[name]?.produto ?? assetSrc(depoimentoReview1),
     )
     .replace(
       /\/assets\/depoimento_(\w+)_avatar\.webp/g,
