@@ -26,12 +26,12 @@ import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
 import avatar4 from "@/assets/avatar-4.jpg";
 import avatar5 from "@/assets/avatar-5.jpg";
-import previewBioquimicaAsset from "@/assets/preview-bioquimica.webp.asset.json";
-import previewAvaliacaoAsset from "@/assets/preview-avaliacao-nutricional.webp.asset.json";
-import previewFisiologiaAsset from "@/assets/preview-fisiologia-humana.webp.asset.json";
-import previewClinicaAsset from "@/assets/preview-nutricao-clinica.webp.asset.json";
-import previewEsportivaAsset from "@/assets/preview-nutricao-esportiva.webp.asset.json";
-import previewMaternoInfantilAsset from "@/assets/preview-nutricao-materno-infantil.webp.asset.json";
+import previewVetAnatomiaAsset from "@/assets/preview-vet-anatomia.png.asset.json";
+import previewVetFisiologiaAsset from "@/assets/preview-vet-fisiologia.png.asset.json";
+import previewVetFarmacologiaAsset from "@/assets/preview-vet-farmacologia.png.asset.json";
+import previewVetPatologiaAsset from "@/assets/preview-vet-patologia.png.asset.json";
+import previewVetMicrobiologiaAsset from "@/assets/preview-vet-microbiologia.png.asset.json";
+import previewVetNutricaoAsset from "@/assets/preview-vet-nutricao.webp.asset.json";
 
 const ASSET_ORIGIN = "https://id-preview--531366b2-beb6-4ef6-9eba-2f23e6d9493d.lovable.app";
 const assetUrl = (path: string) => `${ASSET_ORIGIN}${path}`;
@@ -59,15 +59,12 @@ const depoimentos: Record<string, { produto: string; avatar: string }> = {
 };
 
 const slides = [
-  { src: assetUrl(previewBioquimicaAsset.url), alt: "Mapa mental de Bioquímica da Nutrição" },
-  { src: assetUrl(previewAvaliacaoAsset.url), alt: "Mapa mental de Avaliação Nutricional" },
-  { src: assetUrl(previewFisiologiaAsset.url), alt: "Mapa mental de Fisiologia Humana" },
-  { src: assetUrl(previewClinicaAsset.url), alt: "Mapa mental de Nutrição Clínica" },
-  { src: assetUrl(previewEsportivaAsset.url), alt: "Mapa mental de Nutrição Esportiva" },
-  {
-    src: assetUrl(previewMaternoInfantilAsset.url),
-    alt: "Mapa mental de Nutrição Materno-Infantil",
-  },
+  { src: assetUrl(previewVetAnatomiaAsset.url), alt: "Mapa mental de Anatomia Veterinária" },
+  { src: assetUrl(previewVetFisiologiaAsset.url), alt: "Mapa mental de Fisiologia Animal" },
+  { src: assetUrl(previewVetFarmacologiaAsset.url), alt: "Mapa mental de Farmacologia Veterinária" },
+  { src: assetUrl(previewVetPatologiaAsset.url), alt: "Mapa mental de Patologia Veterinária" },
+  { src: assetUrl(previewVetMicrobiologiaAsset.url), alt: "Mapa mental de Microbiologia Veterinária" },
+  { src: assetUrl(previewVetNutricaoAsset.url), alt: "Mapa mental de Nutrição Animal" },
 ];
 
 
