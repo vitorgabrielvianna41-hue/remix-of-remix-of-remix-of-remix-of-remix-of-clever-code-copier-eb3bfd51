@@ -1,0 +1,13 @@
+[build]
+command = "bun run build"
+publish = "dist/client"
+
+[build.environment]
+BUN_VERSION = "1.2.22"
+NITRO_PRESET = "netlify"
+
+[[headers]]
+for = "/assets/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
