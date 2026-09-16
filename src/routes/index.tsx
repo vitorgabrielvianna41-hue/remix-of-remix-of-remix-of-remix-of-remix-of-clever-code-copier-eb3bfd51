@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 import landingHtml from "../../public/mapa.html?raw";
 import { CoverflowCarousel } from "@/components/ui/coverflow-carousel";
-import kitMockupAsset from "@/assets/mockup-nutricao.webp.asset.json";
+import kitMockupAsset from "@/assets/mockup-vet.png.asset.json";
 import mapaFundamentos from "@/assets/optimized/mapa-fundamentos-educacao.webp";
 import mapaPsicologia from "@/assets/optimized/mapa-psicologia-educacao.webp";
 import mapaDidatica from "@/assets/optimized/mapa-didatica-praticas.webp";
