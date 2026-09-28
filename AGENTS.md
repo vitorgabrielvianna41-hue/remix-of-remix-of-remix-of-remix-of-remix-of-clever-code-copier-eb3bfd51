@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- The landing page is a single React route; keep sales copy, sections, and interactions in src/routes/index.tsx so the CAPSi offer no longer depends on injected legacy HTML.
