@@ -8,3 +8,5 @@
 - [x] Validar o checkout, a página completa e o carregamento sem imagens quebradas
 - [x] Trocar as fotos dos depoimentos e adequar seus textos para Medicina Veterinária
 - [ ] Remodelar todos os textos da página para Medicina Veterinária
+
+- [ ] Remodelar a página para CAPSi na Prática — 200+ Dinâmicas e Atividades
